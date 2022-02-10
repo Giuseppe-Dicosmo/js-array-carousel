@@ -27,17 +27,15 @@ img{
 .cr_arrows_top{
   cursor: pointer;
   position: absolute;
-  left: 50%;
+  left: 55%;
   top: 10px;
-  transform: translate(-50%);
 }
 
 .cr_arrows_bottom{
   cursor: pointer;
   position: absolute;
-  left: 50%;
+  left: 55%;
   bottom: 10px;
-  transform: translate(-50%);
 }
 
 .item_g{

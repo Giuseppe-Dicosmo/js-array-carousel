@@ -6,14 +6,6 @@ const items = [
   'img/05.jpg'
 ];
 
-const title = [
-  'Svezia',
-  'Svizzera',
-  'Gran Bretagna',
-  'Germania',
-  'Paradise'
-]
-
 let cambiaImmagine = 0
 
 // Creare un div per mettere l'immagine.
@@ -21,21 +13,49 @@ const containerImg = document.querySelector (".slide")
 console.log(containerImg)
 
 
-
 // Ho appeso le immagini dentro al contenitore
 for (let i = 0; i < items.length; i++){
+
   const crItem = document.createElement ('div')
   crItem.classList.add('cr_item')
   containerImg.append(crItem)
 
   crItem.innerHTML = `<img src="${items[i]}"></img>`
 
-  }
+}
+const crItemActive = [...document.getElementsByClassName('cr_item')]
+console.log(crItemActive)
 
-  const crItemActive = [...document.getElementsByClassName('cr_item')]
-  console.log(crItemActive)
+crItemActive[cambiaImmagine].classList.add('cr_active')
 
-  crItemActive[cambiaImmagine].classList.add('cr_active')
+
+
+
+const containerImgAnte = document.querySelector (".arrows")
+console.log(containerImgAnte)
+
+for (let y = 0; y < items.length; y++){
+
+  const crItemAnte = document.createElement ('div')
+  crItemAnte.classList.add('item_g')
+  containerImgAnte.append(crItemAnte)
+
+  crItemAnte.innerHTML = `<img src="${items[y]}"></img>`
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
