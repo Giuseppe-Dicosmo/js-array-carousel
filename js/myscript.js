@@ -14,11 +14,28 @@ const title = [
   'Paradise'
 ]
 
-const text = [
-  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
-  'Lorem ipsum',
-  'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
-  'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,'
-]
+let cambiaImmagine = 0
+
+// Creare un div per mettere l'immagine.
+const containerImg = document.querySelector (".slide")
+console.log(containerImg)
+
+
+
+// Ho appeso le immagini dentro al contenitore
+for (let i = 0; i < items.length; i++){
+  const crItem = document.createElement ('div')
+  crItem.classList.add('cr_item')
+  containerImg.append(crItem)
+
+  crItem.innerHTML = `<img src="${items[i]}"></img>`
+
+  }
+
+  const crItemActive = [...document.getElementsByClassName('cr_item')]
+  console.log(crItemActive)
+
+  crItemActive[cambiaImmagine].classList.add('cr_active')
+
+
 
