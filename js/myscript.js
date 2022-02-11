@@ -16,6 +16,8 @@ console.log(arrowsTop)
 const arrowsBottom = document.getElementById ('cr_arrows_bottom_b')
 console.log(arrowsBottom)
 
+let cambiaImmagine = 0;
+
 // Ho appeso le immagini dentro al contenitore
 for (let i = 0; i < items.length; i++){
 
@@ -25,27 +27,35 @@ for (let i = 0; i < items.length; i++){
 
   crItem.innerHTML = `<img src="${items[i]}"></img>`
 
-  if (i == 0) {
-    crItem.classList.add('cr_item')
-    cambiaImmagine = 0;
+  if (cambiaImmagine == i) {
+    crItem.classList.add('cr_active')
   }
 }
+
+
+
+
+
+const allDivItem = document.querySelectorAll(".cr_item")
 
 arrowsBottom.addEventListener('click', function(){
   console.log('indietro')
 
-  const indietro = document.getElementsByClassName('cr_active')[0];
-  indietro.classList.remove('cr_active');
+  allDivItem[cambiaImmagine].classList.remove("cr_active");
   cambiaImmagine++;
-  const nexindietro = document.getElementsByClassName(items[cambiaImmagine])[0];
-  nexindietro.classList.add('cr_active');
+  allDivItem[cambiaImmagine].classList.add("cr_active");
+
 })
 
+arrowsTop.addEventListener('click', function(){
+  console.log('indietro')
 
-const crItemActive = [...document.getElementsByClassName('cr_item')]
-console.log(crItemActive)
+  allDivItem[cambiaImmagine].classList.remove("cr_active");
+  cambiaImmagine--;
+  allDivItem[cambiaImmagine].classList.add("cr_active");
 
-crItemActive[cambiaImmagine].classList.add('cr_active')
+})
+
 
 
 
