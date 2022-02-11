@@ -6,12 +6,15 @@ const items = [
   'img/05.jpg'
 ];
 
-let cambiaImmagine = 0
-
 // Creare un div per mettere l'immagine.
 const containerImg = document.querySelector (".slide")
 console.log(containerImg)
 
+const arrowsTop = document.getElementById ('cr_arrows_top_a')
+console.log(arrowsTop)
+
+const arrowsBottom = document.getElementById ('cr_arrows_bottom_b')
+console.log(arrowsBottom)
 
 // Ho appeso le immagini dentro al contenitore
 for (let i = 0; i < items.length; i++){
@@ -22,7 +25,23 @@ for (let i = 0; i < items.length; i++){
 
   crItem.innerHTML = `<img src="${items[i]}"></img>`
 
+  if (i == 0) {
+    crItem.classList.add('cr_item')
+    cambiaImmagine = 0;
+  }
 }
+
+arrowsBottom.addEventListener('click', function(){
+  console.log('indietro')
+
+  const indietro = document.getElementsByClassName('cr_active')[0];
+  indietro.classList.remove('cr_active');
+  cambiaImmagine++;
+  const nexindietro = document.getElementsByClassName(items[cambiaImmagine])[0];
+  nexindietro.classList.add('cr_active');
+})
+
+
 const crItemActive = [...document.getElementsByClassName('cr_item')]
 console.log(crItemActive)
 
@@ -43,6 +62,8 @@ for (let y = 0; y < items.length; y++){
   crItemAnte.innerHTML = `<img src="${items[y]}"></img>`
 
 }
+
+
 
 
 
